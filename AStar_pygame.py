@@ -2,8 +2,8 @@ import pygame
 import os
 pygame.init()
 
-fgröse = 25
-gröse = 30
+fgröse = 100
+gröse = 10
 field = [["O" for fb in range(fgröse)] for fb in range(fgröse)]
 
 class Node():
@@ -59,7 +59,7 @@ def retrace(startn, endn):
     return path
 
 start = Node(1,1)
-end = Node(23,19)
+end = Node(93,79)
 
 s = 0
 z = 0
@@ -175,15 +175,6 @@ while True:
                                 pygame.draw.rect(screen, white2, (neighbour.x*gröse+(neighbour.x*1)+1, neighbour.y*gröse+(neighbour.y*1)+1, gröse, gröse))
                                 pygame.display.update()
                                 pygame.time.wait(10)
-
-            if found:
-                for node in path[:-2]:
-                    field[node.y][node.x] = "P"
-
-
-
-
-
 
     while z != fgröse - 1 and s != fgröse - 1:
         for z in range(len(field)):
